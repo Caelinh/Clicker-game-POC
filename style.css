@@ -1,1 +1,47 @@
-
+#Box1{
+    height:100px;
+    width: 100px;
+    background: red;
+    visibility: visible;
+    transition: all 0.3s ease;
+    color: white;
+    text-align: center;
+}
+#Box1:hover{
+    background:#53a7ea
+}
+#Box2{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    margin: 1rem auto;
+}
+#Box3{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    margin: 1rem auto;
+}
+#Box4{
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    margin: 1rem auto;
+}
+body{
+    height: 50rem;
+}
+div{
+    transition:all 0.5s ease;
+    display: inline-block;
+    position: absolute;
+    background: blue;
+    height: 50px;
+    width: 50px;
+}
+section{
+    width: 50rem;
+    height: 30rem;
+    margin:auto;
+    border: black solid thick;
+}
