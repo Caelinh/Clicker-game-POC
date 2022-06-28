@@ -7,9 +7,7 @@
     color: white;
     text-align: center;
 }
-#Box1:hover{
-    background:#53a7ea
-}
+
 #Box2{
     height: 100px;
     width: 100px;
@@ -32,16 +30,31 @@ body{
     height: 50rem;
 }
 div{
-    transition:all 0.5s ease;
+    transition:all 0.3s ease;
     display: inline-block;
     position: absolute;
     background: blue;
     height: 50px;
     width: 50px;
 }
+div:hover{
+    background:#53a7ea
+}
 section{
+    position: absolute;
     width: 50rem;
     height: 30rem;
-    margin:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8rem;
+    text-align: center;
+    left: 0;
+    right: 0;
     border: black solid thick;
+}
+h2{
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 1rem;
+    font-size: 40px;
 }

@@ -2,7 +2,7 @@ let box1 = document.getElementById('Box1');
 let box2 = document.getElementById('Box2');
 let box3 = document.getElementById('Box3');
 let box4 = document.getElementById('Box4');
-let displayScore = document.querySelector('p');
+let displayScore = document.querySelector('span');
 let gameSpace = document.getElementById('Game');
 
 // box1.addEventListener('click',changeColor);
@@ -20,18 +20,29 @@ function hide() {
 }
 
 function Button(pos1, pos2, pos3, pos4) {
-    let newButton = document.createElement('div')
-    gameSpace.appendChild(newButton)
-    newButton.style.position = 'absolute',
-        newButton.style.top = `${pos1}px`,
-        newButton.style.right = `${pos2}px`,
-        newButton.style.left = `${pos3}px`,
-        newButton.style.bottom = `${pos4}px`
+    // let newButton = document.createElement('div')
+    this.obj = document.createElement('div'),
+    gameSpace.appendChild(this.obj),
+    this.obj.style.position = 'absolute',
+        this.obj.style.top = `${pos1}%`,
+        this.obj.style.right = `${pos2}%`,
+        this.obj.style.left = `${pos3}%`,
+        this.obj.style.bottom = `${pos4}%`,
+        setTimeout(() => {
+            this.obj.remove()
+        }, 2000);
+        this.obj.addEventListener('click',function(event){
+            score += 1;
+            displayScore.textContent= score;
+            event.target.remove()
+        
+    })
+    
 }
 
 
-Button.prototype.disappear = function(){
-    this.style.visibility = 'hidden';
+function disappear(element) {
+    element.remove();
 }
 
 function getRandomInt(min, max) {
@@ -42,12 +53,12 @@ function getRandomInt(min, max) {
 
 
 function createButton() {
-    let top = getRandomInt(0, 500);
-    let right = getRandomInt(0, 1000);
-    let left = getRandomInt(0, 1000);
-    let bottom = getRandomInt(0, 500);
-    let button = new Button(top,right,left,bottom)
+    let top = getRandomInt(0, 91.5);
+    let right = getRandomInt(0, 98);
+    let left = getRandomInt(0, 98);
+    let bottom = getRandomInt(0, 98);
+    let button = new Button(top, right, left, bottom)
+    console.log(button);
 }
 
-
-setInterval(createButton, 1000);
+setInterval(createButton, 200)
